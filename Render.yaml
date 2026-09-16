@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: vt-proxy
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: VT_API_KEY
+        value: 1ccb6d7b923c657d5ca6ae103510a4b4a2faa3f66192427818df733817464072
